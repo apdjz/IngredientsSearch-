@@ -1,1 +1,1 @@
-# IngredientsSearch-
+# IngredientsSearch-Chat GPT
