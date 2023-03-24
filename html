@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Recipe</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+	<h1>Recipe</h1>
+	<div id="recipe"></div>
+
+	<script>
+		// Your web scraping and database retrieval code here
+
+		// Example recipe data
+		const recipe = {
+			title: 'Example Recipe',
+			author: 'Jane Doe',
+			ingredients: ['1 cup flour', '1 egg', '1/2 cup milk'],
+			instructions: ['Step 1', 'Step 2', 'Step 3']
+		};
+
+		// Create HTML elements to display recipe information
+		const recipeTitle = document.createElement('h2');
+		recipeTitle.textContent = recipe.title;
+
+		const recipeAuthor = document.createElement('p');
+		recipeAuthor.textContent = 'By ' + recipe.author;
+
+		const recipeIngredients = document.createElement('ul');
+		for (let ingredient of recipe.ingredients) {
+			const li = document.createElement('li');
+			li.textContent = ingredient;
+			recipeIngredients.appendChild(li);
+		}
+
+		const recipeInstructions = document.createElement('ol');
+		for (let instruction of recipe.instructions) {
+			const li = document.createElement('li');
+			li.textContent = instruction;
+			recipeInstructions.appendChild(li);
+		}
+
+		const recipeContainer = document.getElementById('recipe');
+		recipeContainer.appendChild(recipeTitle);
+		recipeContainer.appendChild(recipeAuthor);
+		recipeContainer.appendChild(document.createElement('h3').appendChild(document.createTextNode('Ingredients')));
+		recipeContainer.appendChild(recipeIngredients);
+		recipeContainer.appendChild(document.createElement('h3').appendChild(document.createTextNode('Instructions')));
+		recipeContainer.appendChild(recipeInstructions);
+	</script>
+</body>
+</html>
